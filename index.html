@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Courier Management System</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="logo"><a href="#">Courier Management System</a></h1>
+      <ul class="main-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about_us">About Us</a></li>
+        <li><a href="#contact_us">Contact</a></li>
+        <li class="loginInButton">
+          <a onclick="showLogin(event)" href="#">Login</a>
+        </li>
+      </ul>
+    </header>
+    <div class="tracking-page">
+      <h1 class="tracking-heading">Track the status of your Parcel</h1>
+      <p class="tracking-subtitle">
+        Enter the tracking number of your parcel to track the status of your
+        parcel.
+      </p>
+      <form action="/" method="POST">
+        <input
+          type="text"
+          name="tracking"
+          id="trackingId"
+          class="tracking-input"
+          placeholder="Enter Your tracking number"
+        />
+        <input
+          type="submit"
+          onclick="track(event)"
+          value="Track"
+          class="tracking-button"
+        />
+      </form>
+    </div>
+    <div class="container detail hidden">
+      <h3>Your Product Details</h3>
+      <hr />
+      <div class="product-detail">
+        <p>Product ID: <span id="productId"></span></p>
+        <p>Product is: <span id="productName"></span></p>
+        <p>Status: <span id="productStatus"></span></p>
+        <p>Thank You</p>
+      </div>
+      <button class="btn" type="button" onclick="trackAnother(event)">
+        Back
+      </button>
+    </div>
+    <div id="container" class="container hidden">
+      <div id="tabs">
+        <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
+        <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
+
+        <div id="clear"></div>
+      </div>
+
+      <div id="cont">
+        <div id="login" class="comm">
+          <h3>Sign in</h3>
+
+          <input id="se" type="email" placeholder="Email" required />
+          <input id="sp" type="password" placeholder="Password" required />
+          <input class="btn" type="submit" onclick="login()" value="Submit" />
+          <p onclick="forTabFun()">Forget Password?</p>
+        </div>
+        <div id="register" class="comm">
+          <h3>Register</h3>
+
+          <input id="re" type="email" placeholder="Email" required />
+          <input id="re" type="text" placeholder="Username" required />
+          <input id="rp" type="password" placeholder="Password" required />
+          <input
+            id="rrp"
+            type="password"
+            placeholder="Confirm Password"
+            required
+          />
+          <input id="rp" type="number" placeholder="Mobile Number" required />
+          <input id="re" type="number" placeholder="Registration Number" />
+          <input
+            class="chbk"
+            name="gender"
+            id="gender-male"
+            type="radio"
+            value="Male"
+          />
+          <label for="gender-male">Male</label>
+          <input
+            class="chbk"
+            name="gender"
+            id="gender-female"
+            type="radio"
+            value="Female"
+          />
+          <label for="gender-female">Female</label>
+          <input
+            class="btn"
+            type="submit"
+            onclick="Registerwithdb()"
+            value="Submit"
+          />
+        </div>
+        <div id="forgot" class="comm">
+          <h3>Forgot Password</h3>
+          <div>
+            <input id="fe" type="email" placeholder="Email" required />
+            <input
+              class="btn"
+              type="submit"
+              onclick="forgot()"
+              value="Submit"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="about_us" class="about-us">
+      <div class="about-section">
+        <div class="inner-container">
+          <h1 class="about-heading">About Us !!!</h1>
+          <h3 class="about-subheading">Who we are</h3>
+          <p class="about-us-text">
+            We are a Courier Management System. We provide a platform for the
+            customers to track their parcel and also for the employees to manage
+            the parcel. We provide excellent service to our customers. We are in
+            the business for more than 10 years. We have a good reputation in
+            the market.
+          </p>
+          <div class="skills">
+            <span>Keep Shipping</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact_us" class="contact-us">
+      <div class="contact">
+        <div class="form-txt">
+          <h1 class="contact-heading">Contact Us</h1>
+          <span
+            >As you might expect of a company that began as a high-end interiors
+            contractor, we pay strict attention.</span
+          >
+          <h3>USA</h3>
+          <p>195 E Parker Square Dr, Parker, CO 801<br />+43 982-314-0958</p>
+          <h3>India</h3>
+          <p>
+            HW95+C9C, Mhada Colony, Viman Nagar, Pune, Maharashtra<br />411014
+          </p>
+        </div>
+        <div class="form-details">
+          <form action="/" method="post">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            />
+            <textarea
+              name="message"
+              id="message"
+              cols="52"
+              rows="7"
+              placeholder="Message"
+              required
+            ></textarea>
+            <input type="submit" value="SEND MESSAGE" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
